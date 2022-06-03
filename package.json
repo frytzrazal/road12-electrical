@@ -13,9 +13,11 @@
     "tailwindcss": "^3.0.24"
   },
   "scripts": {
-    "start": "concurrently npm:watch:*",
+    "start": "concurrently npm:watch:tw npm:watch:hugo",
+    "start:nofr": "concurrently npm:watch:tw npm:watch:hugo:nofr",
     "watch:tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
     "watch:hugo": "hugo server",
+    "watch:hugo:nofr": "hugo server --disableFastRender",
     "build": "hugo --minify"
   },
   "repository": {

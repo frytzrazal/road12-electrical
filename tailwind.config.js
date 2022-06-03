@@ -12,10 +12,13 @@ module.exports = {
       },
       colors: {
         'blue': '#392aa3',
-        'lt-blue': '#277bba',
+        'lt-blue': {
+          DEFAULT: '#277bba',
+          500: '#21689E'
+        },
         'gainsboro': '#dce1e9',
         'neutral-red': '#ad9baa',
-        'red': '#b31e23'
+        'red': '#a13034'
       }
     }
   },

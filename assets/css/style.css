@@ -924,6 +924,14 @@ html {
   display: grid;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-\[32rem\] {
+  height: 32rem;
+}
+
 .min-h-\[20rem\] {
   min-height: 20rem;
 }

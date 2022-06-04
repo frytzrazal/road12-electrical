@@ -1,6 +1,8 @@
 {{ define "main" }}
 <main class="flex flex-col bg-gainsboro min-w-[20rem] font-light text-lg">
-  <header class="bg-stone-500 text-gray-200">
+  {{ $image := resources.Get "images/road12-3.jpg" }}
+  {{ $image := $image | images.Filter (images.Grayscale) (images.Colorize -20 10 64) (images.Contrast -50)}}
+  <header class="bg-stone-500 text-gray-200 bg-center bg-cover" style="background-image: url('{{ $image.RelPermalink }}')">
     <nav class="m-8 flex flex-row justify-evenly">
       <a class="">HOME</a>
       <a>SERVICES</a>
@@ -10,11 +12,12 @@
     <section
       class="flex flex-col mx-auto md:flex-row md:min-h-[50rem] lg:max-w-5xl items-center content-center justify-items-center">
       <div class="mx-6 my-20 w-1/2 sm:w-1/3 md:basis-1/3 text-center">
-        <object type="image/svg+xml" data="/images/road12-logo.svg" class="logo">
+        {{ $logo := resources.Get "images/road12-logo.svg" }}
+        <object type="image/svg+xml" data="{{ $logo.RelPermalink }}" class="logo">
           Road 12 Logo
         </object>
       </div>
-      <div class="m-6 my-10 md:basis-2/3 md:text-2xl text-center md:text-left">
+      <div class="m-6 my-10 md:basis-2/3 md:text-2xl text-center md:text-left text-white">
         <span class="text-xl md:text-3xl font-bold">Road 12 Auto Electrical Services</span> is your friendly neighborhood shop for all your auto electrical servicing and repairs. We offer a wide range of electrical services from general wiring, wiring harness restoration to troubleshooting.
       </div>
     </section>
@@ -89,7 +92,7 @@
       </div>
     </div>
   </section>
-  <footer class="p-8 py-10 bg-slate-800 text-gray-200">
+  <footer class="p-8 py-10 bg-slate-600 text-gray-200">
     <p class="text-sm text-center">&copy; 2022 | Made with Hugo and Tailwind CSS</p>
   </footer>
 </main>

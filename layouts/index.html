@@ -2,12 +2,13 @@
 <main class="flex flex-col bg-gainsboro min-w-[20rem] font-light text-lg">
   {{ $image := resources.Get "images/road12-3.jpg" }}
   {{ $image := $image | images.Filter (images.Grayscale) (images.Colorize -20 10 64) (images.Contrast -50)}}
-  <header class="bg-stone-500 text-gray-200 bg-center bg-cover" style="background-image: url('{{ $image.RelPermalink }}')">
-    <nav class="m-8 flex flex-row justify-evenly">
-      <a class="">HOME</a>
-      <a>SERVICES</a>
-      <a>LOCATION</a>
-      <a>GALLERY</a>
+  <header class="bg-stone-500 text-white bg-center bg-cover" style="background-image: url('{{ $image.RelPermalink }}')">
+    <a id="top"></a>
+    <nav class="p-8 flex flex-row justify-between font-medium md:text-2xl md:max-w-5xl md:mx-auto">
+      <a href="#top" class="font-bold hover:underline hover:underline-offset-4 decoration-4">ROAD 12</a>
+      <a href="#services" class="hover:underline hover:underline-offset-4 decoration-4">SERVICES</a>
+      <a href="#location" class="hover:underline hover:underline-offset-4 decoration-4">LOCATION</a>
+      <a href="#gallery" class="hover:underline hover:underline-offset-4 decoration-4">GALLERY</a>
     </nav>
     <section
       class="flex flex-col mx-auto md:flex-row md:min-h-[50rem] lg:max-w-5xl items-center content-center justify-items-center">
@@ -17,7 +18,7 @@
           Road 12 Logo
         </object>
       </div>
-      <div class="m-6 my-10 md:basis-2/3 md:text-2xl text-center md:text-left text-white">
+      <div class="m-6 my-10 md:basis-2/3 md:text-2xl text-center md:text-left">
         <span class="text-xl md:text-3xl font-bold">Road 12 Auto Electrical Services</span> is your friendly neighborhood shop for all your auto electrical servicing and repairs. We offer a wide range of electrical services from general wiring, wiring harness restoration to troubleshooting.
       </div>
     </section>
@@ -54,6 +55,7 @@
     </div>
   </section>
   <section class="py-10 md:py-14 text-gray-800">
+    <a id="services"></a>
     <div class="mx-6 grid gap-10 md:gap-20 md:my-6 md:grid-cols-2 md:max-w-5xl md:mx-auto md:px-6">
       <div class="">
         <ion-icon name="car" class="text-red text-5xl block"></ion-icon>
@@ -87,6 +89,7 @@
     </div>
   </section>
   <section class="bg-lt-blue text-gray-200">
+    <a id="location"></a>
     <div class="flex flex-col md:flex-row md:max-w-5xl md:mx-auto md:min-h-[32rem]">
       <div class="text-gray-200 mx-6 my-10 w-full self-center text-center md:w-1/3">
         <h2 class="mx-6 text-2xl leading-loose font-medium">Visit us at</h2>
@@ -98,6 +101,7 @@
     </div>
   </section>
   <section class="py-10">
+    <a id="gallery"></a>
     <div class="md:max-w-5xl md:mx-auto md:min-h-[20rem]">
       <h2 class="mx-6 text-2xl leading-loose md:text-center font-medium">Gallery</h2>
       <div class="mx-6 md:max-w-3xl md:mx-auto">

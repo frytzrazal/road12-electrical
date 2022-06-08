@@ -425,6 +425,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 html {
   font-family: 'Inter', system-ui, sans-serif;
+  scroll-behavior: smooth;
 }
 
 *, ::before, ::after {
@@ -880,10 +881,6 @@ html {
   margin-bottom: 0;
 }
 
-.m-8 {
-  margin: 2rem;
-}
-
 .m-6 {
   margin: 1.5rem;
 }
@@ -964,8 +961,8 @@ html {
   align-items: center;
 }
 
-.justify-evenly {
-  justify-content: space-evenly;
+.justify-between {
+  justify-content: space-between;
 }
 
 .justify-items-center {
@@ -1065,12 +1062,12 @@ html {
   font-weight: 300;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
 .font-medium {
   font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .italic {
@@ -1085,14 +1082,14 @@ html {
   line-height: 1.625;
 }
 
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .text-lt-blue {
@@ -1118,6 +1115,19 @@ html {
 .text-cyan-800 {
   --tw-text-opacity: 1;
   color: rgb(21 94 117 / var(--tw-text-opacity));
+}
+
+.decoration-4 {
+  text-decoration-thickness: 4px;
+}
+
+.hover\:underline:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.hover\:underline-offset-4:hover {
+  text-underline-offset: 4px;
 }
 
 .prose-a\:text-pink-700 :is(:where(a):not(:where([class~="not-prose"] *))) {

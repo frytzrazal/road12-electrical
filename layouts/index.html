@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main class="flex flex-col bg-gainsboro min-w-[20rem] font-light text-lg">
   {{ $image := resources.Get "images/road12-3.jpg" }}
-  {{ $image := $image | images.Filter (images.Grayscale) (images.Colorize -20 10 64) (images.Contrast -50)}}
+  {{ $image := $image | images.Filter (images.Grayscale) (images.Colorize -20 10 64) (images.Contrast -50) (images.GaussianBlur 2)}}
   <header class="bg-stone-500 text-white bg-center bg-cover" style="background-image: url('{{ $image.RelPermalink }}')">
     <a id="top"></a>
     <nav class="p-8 flex flex-row justify-between font-medium md:text-2xl md:max-w-5xl md:mx-auto">

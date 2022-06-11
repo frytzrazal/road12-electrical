@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="flex flex-col bg-gainsboro min-w-[20rem] font-light text-lg">
-  {{ $image := resources.Get "images/road12-3.jpg" }}
+  {{ $image := resources.Get "images/road12-hero.jpg" }}
   {{ $image := $image | images.Filter (images.Grayscale) (images.Colorize -20 10 64) (images.Contrast -50) (images.GaussianBlur 2)}}
   <header class="bg-stone-500 text-white bg-center bg-cover" style="background-image: url('{{ $image.RelPermalink }}')">
     <a id="top"></a>
@@ -105,12 +105,16 @@
       </div>
     </div>
   </section>
-  <section class="py-10">
+  <section id="gallery" class="py-10">
     <a id="gallery"></a>
     <div class="md:max-w-5xl md:mx-auto md:min-h-[20rem]">
       <h2 class="mx-6 text-2xl leading-loose md:text-center font-medium">Gallery</h2>
-      <div class="mx-6 md:max-w-3xl md:mx-auto">
-        photos
+      <div class="grid grid-cols-1 md:grid-cols-4 md:flex-row md:flex-wrap gap-4 mx-6 md:max-w-3xl md:mx-auto">
+        {{ $imageFileNames := slice "road12-1" "road12-2" "road12-3" "road12-4" }}
+        {{ range $imageFileNames }}
+          {{ $image := resources.Get (printf "images/%s.jpeg" .) }}
+          <img class="aspect-square object-cover cursor-pointer" src="{{ $image.RelPermalink }}" />
+        {{ end }}
       </div>
     </div>
   </section>
